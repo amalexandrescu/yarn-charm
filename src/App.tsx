@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import CardiganDesigner from "components/CardiganDesigner";
+import CardiganDesigner from "components/Designer/CardiganDesigner";
 
 const App: React.FC = () => {
   return (

@@ -1,0 +1,26 @@
+.instructions-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.instruction-line {
+  position: relative;
+}
+
+.instruction-line span {
+  display: inline-flex;
+}
+
+.arrow {
+  position: absolute;
+  top: 15px;
+}
+
+.next-arrow {
+  position: absolute;
+  top: 20px;
+  left: -60px;
+}

@@ -14,12 +14,11 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "prettier"
   ],
   "parserOptions": {
-    "project": [
-      "tsconfig.json"
-    ],
+    "project": ["tsconfig.json"],
     "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
@@ -28,20 +27,23 @@
   },
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-unused-vars": ["warn", {"ignoreRestSiblings": true}],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "ignoreRestSiblings": true }
+    ],
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [
-          ".jsx",
-          ".tsx"
-        ]
+        "extensions": [".jsx", ".tsx"]
       }
     ],
     "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "no-shadow": ["error", {"builtinGlobals": false, "hoist": "functions", "allow": []}]
+    "no-shadow": [
+      "error",
+      { "builtinGlobals": false, "hoist": "functions", "allow": [] }
+    ]
   },
   "settings": {
     "react": {
