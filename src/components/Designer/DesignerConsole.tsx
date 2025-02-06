@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CardiganDesigner.css";
+import "./DesignerConsole.css";
 import MenuTab from "components/MenuTabs/MenuTab";
 import ContentTab from "components/MenuTabs/ContentTab";
 
@@ -8,7 +8,7 @@ import ContentTab from "components/MenuTabs/ContentTab";
 //choose type of accessories (flowers, hearts)
 //choose color of accessories -> hearts - choose a color and flowers - choose combination of colors
 
-const CardiganDesigner: React.FC = () => {
+const DesignerConsole: React.FC = () => {
   const [selectedTab, setSelectedtab] = useState<string>("how-to");
 
   const handleTabChange = (newTab: string) => {
@@ -28,4 +28,4 @@ const CardiganDesigner: React.FC = () => {
   );
 };
 
-export default CardiganDesigner;
+export default DesignerConsole;

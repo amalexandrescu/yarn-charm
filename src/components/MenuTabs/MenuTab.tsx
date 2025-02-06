@@ -1,5 +1,6 @@
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import React, { useState } from "react";
+import "./MenuTab.css";
 
 interface IMenuTabProps {
   onTabChange: (newTab: string) => void;
@@ -10,11 +11,11 @@ const MenuTab: React.FC<IMenuTabProps> = ({ onTabChange }) => {
 
   const handleChange = (
     _event: React.MouseEvent<HTMLElement>,
-    newMode: string | null,
+    newTab: string | null,
   ) => {
-    if (newMode !== null) {
-      setTab(newMode);
-      onTabChange(newMode);
+    if (newTab !== null) {
+      setTab(newTab);
+      onTabChange(newTab);
     }
   };
 
@@ -27,24 +28,9 @@ const MenuTab: React.FC<IMenuTabProps> = ({ onTabChange }) => {
         aria-label="message toggle"
         className="menu-tab"
       >
-        <ToggleButton
-          value="how-to"
-          sx={{ textTransform: "none", fontFamily: "Playwrite PT" }}
-        >
-          How to
-        </ToggleButton>
-        <ToggleButton
-          value="cardigan-color"
-          sx={{ textTransform: "none", fontFamily: "Playwrite PT" }}
-        >
-          Choose color
-        </ToggleButton>
-        <ToggleButton
-          value="application-color"
-          sx={{ textTransform: "none", fontFamily: "Playwrite PT" }}
-        >
-          Choose applications
-        </ToggleButton>
+        <ToggleButton value="how-to">How to</ToggleButton>
+        <ToggleButton value="cardigan-designer">Choose color</ToggleButton>
+        <ToggleButton value="charm-designer">Choose charm</ToggleButton>
       </ToggleButtonGroup>
     </div>
   );

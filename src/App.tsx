@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import CardiganDesigner from "components/Designer/CardiganDesigner";
+import DesignerConsole from "components/Designer/DesignerConsole";
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <div className="App-header">Yarn Charm by Alexandra</div>
       <div className="App-content">
-        <CardiganDesigner />
+        <DesignerConsole />
       </div>
     </div>
   );

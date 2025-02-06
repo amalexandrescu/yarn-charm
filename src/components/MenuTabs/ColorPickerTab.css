@@ -34,15 +34,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.selected-color {
-  margin-top: 20px;
-  padding: 10px;
-  text-align: center;
-}
-
-.color-display {
-  width: 100px;
-  height: 100px;
-  margin: 10px auto;
-  border-radius: 5px;
+.tooltip {
+  font-size: 10px;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  background-color: white;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 2px 5px;
 }

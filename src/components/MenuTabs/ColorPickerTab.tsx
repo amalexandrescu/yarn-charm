@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import "./ColorPickerTab.css"; // We'll add the styles in this file
 
-const ColorPickerTab = () => {
-  const [selectedColor, setSelectedColor] = useState<string>("");
+interface IColorPickerProps {
+  colors: Array<{
+    colorCode: string;
+    colorName: string;
+  }>;
+}
 
-  const colors = [
-    "#FFFFFF", //white
-    "#FFF6D2", //beige
-    "#FFB6C1", //light pink
-    "#E00158", //fuchsia
-    "#AAE7D0", //light green
-    "#FFCD19", //yellow
-    "#FFA500", //orange
-    "#5FCADF", //turqoise
-    "#BD34F7", //purple
-    "#000000", //black
-  ];
+const ColorPickerTab: React.FC<IColorPickerProps> = ({ colors }) => {
+  //both (selectedColor and hoveredColor) will have the colorCode
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [hoveredColor, setHoveredColor] = useState<string | null>(null);
 
   const handleColorClick = (color: string) => {
     setSelectedColor(color);
@@ -23,17 +19,24 @@ const ColorPickerTab = () => {
 
   return (
     <div className="color-picker">
-      <h2>Select cardigan color</h2>
       <div className="color-palette">
         {colors.map((color, index) => (
           <div
             key={index}
-            className={`color-box ${selectedColor === color ? "selected" : ""}`}
-            style={{ backgroundColor: color }}
-            onClick={() => handleColorClick(color)}
-          />
+            className={`color-box ${selectedColor === color.colorCode ? "selected" : ""}`}
+            style={{ backgroundColor: color.colorCode }}
+            onClick={() => handleColorClick(color.colorCode)}
+            onMouseEnter={() => setHoveredColor(color.colorCode)}
+            onMouseLeave={() => setHoveredColor(null)}
+          >
+            {/* Tooltip */}
+            {hoveredColor === color.colorCode && (
+              <div className="tooltip">{color.colorName}</div>
+            )}
+          </div>
         ))}
       </div>
+      selected color: {selectedColor}
     </div>
   );
 };
