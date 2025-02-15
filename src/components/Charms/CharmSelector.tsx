@@ -74,7 +74,7 @@ const CharmSelector: React.FC = () => {
       </div>
       {selectedCharmModel && (
         <>
-          <h3 className="sub-heading">Available colors</h3>
+          <h3>Available colors</h3>
           <div className="charm-preview-container">
             {colors.map((color) => (
               <div

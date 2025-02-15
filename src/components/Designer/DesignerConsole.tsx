@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./DesignerConsole.css";
-import MenuTab from "components/MenuTabs/MenuTab";
 import ContentTab from "components/MenuTabs/ContentTab";
+import { CardiganProvider } from "src/context/CardiganContext";
+import MenuTabs from "components/MenuTabs/MenuTabs";
+import CardiganRenderer from "components/Cardigan/CardiganRenderer";
 
 //options for the designer
 //choose cardigan color
@@ -17,13 +19,17 @@ const DesignerConsole: React.FC = () => {
 
   return (
     <div className="designer-console">
-      <div className="cardigan-designer">
-        <MenuTab onTabChange={handleTabChange} />
-        <ContentTab currentTab={selectedTab} />
-      </div>
-      <div className="cardigan-placeholder">
-        <div className="menu"></div>
-      </div>
+      <CardiganProvider>
+        <div className="cardigan-designer">
+          <MenuTabs onTabChange={handleTabChange} />
+          <ContentTab currentTab={selectedTab} />
+        </div>
+        <div className="cardigan-placeholder">
+          <div className="menu">
+            <CardiganRenderer />
+          </div>
+        </div>
+      </CardiganProvider>
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import React, { useState } from "react";
-import "./MenuTab.css";
+import "./MenuTabs.css";
 
 interface IMenuTabProps {
   onTabChange: (newTab: string) => void;
 }
 
-const MenuTab: React.FC<IMenuTabProps> = ({ onTabChange }) => {
+const MenuTabs: React.FC<IMenuTabProps> = ({ onTabChange }) => {
   const [tab, setTab] = useState("how-to");
 
   const handleChange = (
@@ -36,4 +36,4 @@ const MenuTab: React.FC<IMenuTabProps> = ({ onTabChange }) => {
   );
 };
 
-export default MenuTab;
+export default MenuTabs;

@@ -1,7 +1,7 @@
+import ColorPicker from "components/ColorPicker/ColorPicker";
 import React from "react";
-import ColorPickerTab from "./ColorPickerTab";
 
-const colors = [
+export const colors = [
   {
     colorCode: "#FFFFFF",
     colorName: "white",
@@ -12,7 +12,7 @@ const colors = [
   },
   {
     colorCode: "#FFB6C1",
-    colorName: "light pink",
+    colorName: "pink",
   },
   {
     colorCode: "#E00158",
@@ -20,7 +20,7 @@ const colors = [
   },
   {
     colorCode: "#AAE7D0",
-    colorName: "light green",
+    colorName: "green",
   },
   {
     colorCode: "#FFCD19",
@@ -32,7 +32,7 @@ const colors = [
   },
   {
     colorCode: "#5FCADF",
-    colorName: "turqoise",
+    colorName: "blue",
   },
   {
     colorCode: "#BD34F7",
@@ -48,7 +48,7 @@ const CardiganSelector: React.FC = () => {
   return (
     <div>
       <h2>Select cardigan color</h2>
-      <ColorPickerTab colors={colors} />
+      <ColorPicker colors={colors} />
     </div>
   );
 };

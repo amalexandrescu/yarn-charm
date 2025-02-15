@@ -6,11 +6,12 @@
   height: 500px;
   border-radius: 10px;
   overflow: hidden;
-  /* background-color: pink; */
 }
 
 .cardigan-designer {
   background-color: pink;
+  background-color: white;
+
   height: 100%;
   width: 50%;
   display: flex;
@@ -22,6 +23,7 @@
 
 .cardigan-placeholder {
   background-color: lightgreen;
+  background-color: white;
   height: 100%;
   width: 50%;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import "./ContentTab.css";
 import InstructionsTab from "./InstructionsTab";
-import CardiganSelector from "./CardiganSelector";
-import CharmSelector from "./CharmSelector";
+import CardiganSelector from "components/Cardigan/CardiganSelector";
+import CharmSelector from "components/Charms/CharmSelector";
 
 interface IContentTabProps {
   currentTab: string;
