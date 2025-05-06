@@ -2,11 +2,18 @@ import React from "react";
 
 interface IFlowerCharmProps {
   color: string;
+  height?: string;
+  width?: string;
 }
 
-const FlowerCharm: React.FC<IFlowerCharmProps> = ({ color }) => {
+const FlowerCharm: React.FC<IFlowerCharmProps> = ({
+  color,
+  height = "50px",
+  width = "50px",
+}) => {
+  console.log("color: ", color);
   return (
-    <svg height="50px" width="50px" viewBox="0 0 511.454 511.454">
+    <svg height={height} width={width} viewBox="0 0 511.454 511.454">
       <g>
         <path
           style={{ fill: color }}

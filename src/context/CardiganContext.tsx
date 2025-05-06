@@ -1,4 +1,4 @@
-import { error } from "console";
+import { ICharmColor } from "components/Charms/CharmSelector";
 import React, { createContext, ReactNode, useContext, useState } from "react";
 
 type CardiganColor =
@@ -15,9 +15,24 @@ type CardiganColor =
   | ""
   | string;
 
+export type CharmModel = "flower" | "heart" | "noCharm" | "";
+
+export type CharmColor =
+  | "white"
+  | "red"
+  | "green"
+  | "orange"
+  | "blue"
+  | "purple"
+  | "";
+
 interface CardiganContextType {
-  selectedColor: CardiganColor;
-  setSelectedColor: (color: CardiganColor) => void;
+  selectedCardiganColor: CardiganColor;
+  setSelectedCardiganColor: (color: CardiganColor) => void;
+  selectedCharmModel: CharmModel;
+  setSelectedCharmModel: (model: CharmModel) => void;
+  selectedCharmColor: ICharmColor | null;
+  setSelectedCharmColor: (color: ICharmColor | null) => void;
 }
 
 const CardiganContext = createContext<CardiganContextType | undefined>(
@@ -25,12 +40,30 @@ const CardiganContext = createContext<CardiganContextType | undefined>(
 );
 
 //create a provider component
-
 export const CardiganProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedColor, setSelectedColor] = useState<CardiganColor | "">("");
+  const [selectedCardiganColor, setSelectedCardiganColor] = useState<
+    CardiganColor | ""
+  >("");
+  const [selectedCharmModel, setSelectedCharmModel] = useState<CharmModel | "">(
+    "noCharm",
+  );
+  const [selectedCharmColor, setSelectedCharmColor] =
+    useState<ICharmColor | null>({
+      colorCode: "#FFFFFF",
+      colorName: "white",
+    });
 
   return (
-    <CardiganContext.Provider value={{ selectedColor, setSelectedColor }}>
+    <CardiganContext.Provider
+      value={{
+        selectedCardiganColor,
+        setSelectedCardiganColor,
+        selectedCharmModel,
+        setSelectedCharmModel,
+        selectedCharmColor,
+        setSelectedCharmColor,
+      }}
+    >
       {children}
     </CardiganContext.Provider>
   );

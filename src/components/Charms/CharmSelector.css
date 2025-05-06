@@ -49,3 +49,12 @@
   border-radius: 3px;
   padding: 2px 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .charm-preview-container {
+    gap: 15px;
+    display: grid;
+    justify-content: center;
+    padding: 10px 15px;
+  }
+}

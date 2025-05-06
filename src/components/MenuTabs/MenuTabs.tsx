@@ -1,20 +1,18 @@
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import "./MenuTabs.css";
 
 interface IMenuTabProps {
+  tab: string;
   onTabChange: (newTab: string) => void;
 }
 
-const MenuTabs: React.FC<IMenuTabProps> = ({ onTabChange }) => {
-  const [tab, setTab] = useState("how-to");
-
+const MenuTabs: React.FC<IMenuTabProps> = ({ onTabChange, tab }) => {
   const handleChange = (
     _event: React.MouseEvent<HTMLElement>,
     newTab: string | null,
   ) => {
     if (newTab !== null) {
-      setTab(newTab);
       onTabChange(newTab);
     }
   };

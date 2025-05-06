@@ -9,7 +9,7 @@ interface ICustomizedCardiganProps {
 const CustomizedCardigan: React.FC<ICustomizedCardiganProps> = ({
   colorCode,
 }) => {
-  //find return an object in format {colorName: ...;colorCode: ...}, this is why I use.?colorName
+  //find returns an object in format {colorName: ...;colorCode: ...}, this is why I use.?colorName
   const matchedColor = colors.find(
     (color) => color.colorCode === colorCode,
   )?.colorName;

@@ -9,9 +9,7 @@
 }
 
 .cardigan-designer {
-  background-color: pink;
   background-color: white;
-
   height: 100%;
   width: 50%;
   display: flex;
@@ -22,8 +20,46 @@
 }
 
 .cardigan-placeholder {
-  background-color: lightgreen;
   background-color: white;
   height: 100%;
   width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardigan-placeholder-title {
+  position: absolute;
+  top: 0;
+}
+
+/* Media Queries pentru mobile */
+@media screen and (max-width: 768px) {
+  .designer-console {
+    flex-direction: column;
+    width: 100vw;
+    height: 85vh;
+    margin: 10px;
+  }
+
+  .cardigan-designer,
+  .cardigan-placeholder {
+    width: 100%;
+    height: 50%;
+    min-height: 300px;
+  }
+
+  .cardigan-designer {
+    order: 2; /* Mută designerul sub cardigan pe mobile */
+  }
+
+  .cardigan-placeholder {
+    order: 1; /* Mută cardiganul deasupra pe mobile */
+  }
+
+  .cardigan-placeholder-title {
+    top: -13px;
+  }
 }
