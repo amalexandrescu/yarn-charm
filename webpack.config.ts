@@ -48,7 +48,13 @@ const webpackConfig = (env): Configuration => ({
     // Add the CopyWebpackPlugin to copy static assets from public/ to dist/
     new CopyWebpackPlugin({
       patterns: [
-        { from: "public", to: "public" }, // Copies everything from public/ to dist/public/
+        {
+          from: "public",
+          to: ".",
+          globOptions: {
+            ignore: ["**/index.html"], // ← this line avoids conflict
+          },
+        }, // Copies everything from public/ to dist/public/
       ],
     }),
   ],
